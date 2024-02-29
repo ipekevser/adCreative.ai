@@ -5,14 +5,12 @@ import { useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import Spinner from "../spinner";
 import CardContainer from "../card";
-import { getPageNumber } from "../../helpers/utils";
 
 const ListField = () => {
   const dispatch = useDispatch();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const list = useSelector((state: RootState) => state.list.results);
-  const info = useSelector((state: RootState) => state.list.info);
   const searchQuery = useSelector((state: RootState) => state.list.searchQuery);
 
   const errorMessage = useSelector(
@@ -43,7 +41,7 @@ const ListField = () => {
   };
 
   const render = () => {
-    if (list?.length === 0 && !errorMessage) {
+    if (loading && list?.length === 0 && !errorMessage) {
       return (
         <div className={styles.helpercontainer}>
           <Spinner />
@@ -59,7 +57,7 @@ const ListField = () => {
       return (
         <>
           {list?.map((character: Character) => (
-            <CardContainer character={character} />
+            <CardContainer key={character.id} character={character} />
           ))}
         </>
       );

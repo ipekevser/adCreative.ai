@@ -14,9 +14,11 @@
   input {
     margin: 0 36px 0 4px;
     min-width: 120px;
+    height: 48px;
     display: inline-flex;
     flex: 1;
     border: none;
+    font-size: 24px;
 
     &:focus-visible {
       outline: none;

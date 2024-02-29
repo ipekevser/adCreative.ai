@@ -34,7 +34,7 @@ const CardContainer = ({ character }: CardProps) => {
   };
 
   return (
-    <div className={styles.card} key={character.id}>
+    <div className={styles.card}>
       <input
         type="checkbox"
         onChange={() => handleChange(character)}
