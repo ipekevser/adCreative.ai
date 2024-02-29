@@ -11,9 +11,13 @@ export const MainContainer = () => {
     setIsActive(false);
   });
 
+  const handleClickToggle = () => {
+    setIsActive(prev => !prev)
+  }
+  
   return (
     <div className={styles.mainContainer} ref={blurRef}>
-      <SearchField onFocus={() => setIsActive(true)} isActive={isActive} />
+      <SearchField onFocus={() => setIsActive(true)} isActive={isActive} toggleClick={handleClickToggle}/>
       {isActive && <ListField />}
     </div>
   );
