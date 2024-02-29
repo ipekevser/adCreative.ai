@@ -1,0 +1,19 @@
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  padding: 8px 12px;
+  border-radius: 12px;
+  gap: 12px;
+
+  .tagName {
+    color: var(--text);
+    font-size: 24px;
+  }
+
+  .tagIcon {
+    padding: 4px 4px 0;
+    background-color: var(--dark-surface);
+    border-radius: 4px;
+  }
+}

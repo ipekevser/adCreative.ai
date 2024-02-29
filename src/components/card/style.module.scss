@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--primary);
+  font-size: 24px;
+  color: var(--text);
+  font-weight: 400;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  img {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+  }
+
+  .episodes {
+    color: var(--primary);
+  }
+
+  input {
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../global-styles/responsive";
+
+.mainContainer {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  @include custom-breakpoint(sm) {
+    max-width: 80%;
+  }
+
+  @include custom-breakpoint(md) {
+    max-width: 70%;
+  }
+
+  @include custom-breakpoint(lg) {
+    max-width: 60%;
+  }
+
+  @include custom-breakpoint(xl) {
+    width: 50%;
+  }
+}

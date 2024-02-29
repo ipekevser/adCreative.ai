@@ -1,0 +1,14 @@
+$custom-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+@mixin custom-breakpoint($breakpoint) {
+  @if map-has-key($custom-breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($custom-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
