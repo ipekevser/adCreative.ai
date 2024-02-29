@@ -3,7 +3,7 @@ import useIcons from "../../helpers/icons";
 import TagsContainer from "../tags";
 import styles from "./style.module.scss";
 import { SearchFieldProps } from "./interface";
-import { debounce } from "@material-ui/core/utils";
+import { debounce } from "../../helpers/utils";
 
 const SearchField = ({ onFocus, isActive }: SearchFieldProps) => {
   const dispatch = useDispatch();
