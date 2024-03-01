@@ -33,10 +33,23 @@ const ListField = () => {
     };
   }, [searchQuery]);
 
-  const handleScroll = () => {
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [list]);
+
+  const handleScroll = async () => {
     const { scrollTop, clientHeight, scrollHeight } = containerRef.current!;
     if (scrollHeight - scrollTop - clientHeight < 50) {
-      dispatch.list.load("load");
+      if (list && list?.length !== 0) {
+        dispatch.list.load("load");
+      }
     }
   };
 
